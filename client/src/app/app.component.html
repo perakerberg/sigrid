@@ -1,0 +1,28 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="container">
+    <!-- <h3>Sigrid</h3> -->
+    <div class="bot" [ngClass]="{'tired' : mood === moods.Tired,
+    'sleepy' : mood === moods.Sleepy,
+    'sleeping' : mood === moods.Sleeping,
+    'scary' : mood === moods.Scary }" >
+        <div class="bot__head" [ngClass]="{'speaking' : speaking}">
+            <img  class="bot__image normal" src="./assets/BlondeGirl_NoMouth.png"/>
+            <img class="bot__image skull" src="./assets/Dead-kenny-skeletal.png"/>
+
+            <div *ngIf="mood !== moods.Scary" class="eyes" [ngClass]="{'blinking':blinking}">
+                <img src="./assets/Eyes.png">
+            </div>
+        </div>
+        <div class="bot__speech">
+            <p class="outbound">{{lastSentMessage}}
+            </p>
+            <div *ngFor="let r of lastResponse">
+                <p class="inbound" >{{r}}</p>
+            </div>
+        </div>
+    </div>
+    <div class="input">
+        <input type="text" placeholder="Skriv något till Sigrid" [(ngModel)]="message" (keypress)="onKeyPress($event)"/>
+
+    </div>
+</div>

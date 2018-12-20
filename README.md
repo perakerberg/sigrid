@@ -1,2 +1,2 @@
 # sigrid
-En "Siri-liknande" demo-bot byggd inför PRAO-dagen på Letebskolan. 
+En "Siri-liknande" demo-bot byggd inför PRAO-dagen på Leteboskolan. 
